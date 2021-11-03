@@ -24,7 +24,6 @@ public class TestStudentData_2 {
         Assert.assertTrue(response.asPrettyString().contains("Michael"));
 
         //fetch body content using json path//
-
         Assert.assertEquals(response.jsonPath().getString("data.first_name"), "[Michael, Lindsay, Tobias, Byron, George, Rachel]");
         Assert.assertEquals(response.jsonPath().getString("data.id"), "[7, 8, 9, 10, 11, 12]");
 
