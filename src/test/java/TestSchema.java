@@ -15,7 +15,6 @@ public class TestSchema {
                 .when()
                 .get("/api/users?page=2")
                 .then()
-                .assertThat()
                 .statusCode(200)
 
                 .contentType(ContentType.JSON);
@@ -43,11 +42,9 @@ public class TestSchema {
 
         given().
                 contentType(ContentType.JSON).
-
                 when().
                 get("https://reqres.in/api/users?page=2").
                 then().
-
-                assertThat().body(matchesJsonSchemaInClasspath("schema.json"));
+                body(matchesJsonSchemaInClasspath("schema.json"));
     }
 }
